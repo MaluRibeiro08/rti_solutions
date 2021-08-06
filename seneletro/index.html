@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>Emissão Conta de Luz</title>
+</head>
+
+<body>
+    
+    <main>
+        <form method="POST" action="calcularConsumo.php">
+
+
+            <label for="nomeCliente">Nome</label>
+            <input name="nomeCliente" id="nomeCliente" type="text" placeholder="Seu nome completo">
+
+            <label for="consumoTotal">Consumo</label>
+            <input name="consumoTotal" id="consumoTotal" type="text" placeholder="Consumo do mês em kWh">
+
+            <label for="endereçoRua">Endereço</label>
+            <input name="endereçoRua" id="endereçoRua" type="text" placeholder="Rua da instalação">
+
+            <input name="endereçoNumero" id="endereçoNumero" type="text" placeholder="Número">
+
+            <button>Buscar conta</button>
+            
+
+        </form>
+
+    </main>
+
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+.consumoEconomico
+{
+    color: green;
+    size: 80px;
+}
+
+.consumoNaoEconomico
+{
+    color: red;
+    size: 80px;
+}
