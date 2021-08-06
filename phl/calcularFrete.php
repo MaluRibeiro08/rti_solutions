@@ -35,6 +35,9 @@ $valorTotalViagem = ($distancia * VALOR_QUILOMETRO) + ($pedagios * VALOR_PEDAGIO
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
     <title>Valor da Viagem</title>
 
 </head>
@@ -42,6 +45,5 @@ $valorTotalViagem = ($distancia * VALOR_QUILOMETRO) + ($pedagios * VALOR_PEDAGIO
 
     <h2> A viagem de <?= $cidadeOrigem ?> em direção a <?= $cidadeDestino?> irá custar um valor de:</h2>
     <h1> R$ <?= $valorTotalViagem?></h1>
-    
 </body>
 </html>
