@@ -2,48 +2,56 @@
 
 //DEFININDO VALORES DAS VARIÁVEIS QUE VAMOS UTILIZAR SEMPRE
 
-//como declarar constantes?
-const VALOR_QUILOMETRO = 6.0;
-const VALOR_PEDAGIO = 9.40; 
+    //como declarar constantes?
+    const VALOR_QUILOMETRO = 6.0;
+    const VALOR_PEDAGIO = 9.40; 
 
 //VALIDANDO FORMULÁRIO E CRIANDO VARIÁVEIS
 
-if(isset($_POST["cidadeOrigem"]) && isset($_POST["cidadeDestino"]) && isset($_POST["distancia"]) 
-&& isset($_POST["pedagios"]))
-{
-    
-    $cidadeOrigem = $_POST["cidadeOrigem"]; //entre parênteses coloca-se o name usado no form (html)
-    $cidadeDestino = $_POST["cidadeDestino"];
-    $distancia = $_POST["distancia"];
-    $pedagios = $_POST["pedagios"];
-}
+    if(isset($_POST["cidadeOrigem"]) && isset($_POST["cidadeDestino"]) && isset($_POST["distancia"]) 
+    && isset($_POST["pedagios"]))
+    {
+        
+        $cidadeOrigem = $_POST["cidadeOrigem"]; //entre parênteses coloca-se o name usado no form (html)
+        $cidadeDestino = $_POST["cidadeDestino"];
+        $distancia = $_POST["distancia"];
+        $pedagios = $_POST["pedagios"];
+    }
 
-else
-{
-    echo "<h1>Você não enviou as informação corretamente</h1>";
-}
+    else
+    {
+        echo "<h1>Você não enviou as informação corretamente</h1>";
+        die; //para o processamento do PHP
+        exit; //para o processamento do PHP
+    }
 
 //CALCULANDO O FRETE E CRIANDO VARIÁVEIS PARA HTML
 
-$valorTotalViagem = ($distancia * VALOR_QUILOMETRO) + ($pedagios * VALOR_PEDAGIO);
+    $valorTotalViagem = ($distancia * VALOR_QUILOMETRO) + ($pedagios * VALOR_PEDAGIO);
 
-?>
+    // += : atribuição por adição. Revebe ele mesmo mais alguma coisa
 
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    ?>
 
-    <link rel="stylesheet" href="style.css">
+    <!--
+// HTML
+    -->
 
-    <title>Valor da Viagem</title>
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-</head>
-<body>
+        <link rel="stylesheet" href="style.css">
 
-    <h2> A viagem de <?= $cidadeOrigem ?> em direção a <?= $cidadeDestino?> irá custar um valor de:</h2>
-    <h1> R$ <?= $valorTotalViagem?></h1>
-</body>
-</html>
+        <title>Valor da Viagem</title>
+
+    </head>
+    <body>
+
+        <h2> A viagem de <?= $cidadeOrigem ?> em direção a <?= $cidadeDestino?> irá custar um valor de:</h2>
+        <h1> R$ <?= number_format($valorTotalViagem, 2,",", ".") ?></h1>
+    </body>
+    </html>
