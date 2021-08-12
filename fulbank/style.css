@@ -6,26 +6,38 @@
 
 body
 {
-    width: 100vw;
-    height: 100vh;
+    width: 99vw;
+    height: 99vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Gowun Dodum', sans-serif;
+    color: rgb(90, 86, 86);
 
     background-image: linear-gradient(rgb(216, 206, 231)(204, 204, 204), white);
 }
 
 header
 {
-    height: 150px;
+    height: 140px;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
 }
 
+h1
+{
+    font-size: 60px;
+    color: rgb(33, 101, 102);
+}
+
+h2
+{
+    font-size: 30px;
+    font-weight: normal;
+}
 main
 {
     flex-grow: 1;
@@ -36,14 +48,45 @@ main
     align-items: center;
 }
 
+.input
+{
+    border: none;
+    border-bottom: solid 0.5px rgb(33, 101, 102);
+    outline: rgb(108, 196, 197);
+
+    height: 30px;
+
+    font-family: 'Gowun Dodum', sans-serif;
+
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+select
+{
+    border: none;
+    outline: none;
+    overflow: hidden;
+
+    font-family: 'Gowun Dodum', sans-serif;
+}
+
+.labelImportante
+{
+    color: rgb(33, 101, 102);
+    font-weight: bold;
+}
+
 .mainResultado
 {
     display: flex;
     flex-direction: column;
 
-    margin: 80px;
+    height: 70vh;
 
-    box-shadow: 0px 5px 10px rgb(151, 233, 213),0px 5px 20px rgb(177, 224, 213);
+    margin: 50px;
+
+    box-shadow: 0px 2px 15px rgb(188, 241, 228), 0px 2px 15px rgb(214, 241, 235);
     border-radius: 5px;
     padding: 30px;
     background-color: white;
@@ -53,7 +96,7 @@ main
 
 footer
 {
-    height: 100px;
+    height: 70px;
 
     display: flex;
     justify-content: center;
@@ -64,43 +107,51 @@ form
 {
     display: flex;
     flex-direction: column;
+    
 
-    box-shadow: 0px 5px 10px rgb(151, 233, 213),0px 5px 20px rgb(177, 224, 213);
+    box-shadow: 0px 2px 15px rgb(188, 241, 228), 0px 2px 15px rgb(214, 241, 235);
     border-radius: 5px;
     padding: 30px;
     background-color: white;
 
+    width: auto;
+
     gap: 20px;
 }
 
-
-.input
+.titulo
 {
     width: 100%;
-    margin-bottom: 10px;
-    /* height: 30px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
 
 button
 {
     width: 100%;
     background-color: transparent;
-    border: 1px solid rgb(160, 190, 189);
+    border: none;
+    box-shadow: 0px 2px 15px rgb(188, 241, 228);
+    /* border: 1px solid rgb(160, 190, 189); */
     height: 30px;
 
-    font-weight: bold;
+    font-size: 20px;
     transition: .2s;
     cursor: pointer;
+    font-family: 'Gowun Dodum', sans-serif;
 }
 
-button:hover{
-    box-shadow: 0px 0px 20px rgb(108, 196, 197);
+button:hover
+{
+    box-shadow: 0px 0px 15px rgb(156, 223, 224);
 }
-
 
 em
 {
     font-style: normal;
+    color: rgb(33, 101, 102);
     font-weight: bold;
 }
 
@@ -111,4 +162,16 @@ em
     gap: 5px;
 
     width: 100%;
+}
+
+.resposta p
+{
+    font-size: 25px;
+}
+
+a
+{
+    text-decoration: none;
+    color: rgb(33, 101, 102);
+    font-weight: bold;
 }

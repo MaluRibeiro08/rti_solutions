@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fulbank - Reajuste Salarial</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
@@ -18,45 +23,49 @@
 
         <form method="POST" action="./calcularReajusteSalario.php">
 
-            <h2>Fulbank - Reajuste Salarial</h2>
+            <div class="titulo">
+                <h2>Reajuste Salarial</h2>
+            </div>
+
+            
 
             <div class="nome">
-                <label for="nome">Nome</label>
-                <input class="input" id="nome" name="nome" />
+                <label class="labelImportante" for="nome">Nome</label>
+                <input class="input" id="nome" name="nome" placeholder="Digite aqui seu nome" required/>
             </div>
             
             <div class="salario">
-                <label  for="salarioAtual">Salarial Atual</label>
-                <input class="input" type="number" id="salarioAtual" name="salarioAtual"/>
+                <label  class="labelImportante" for="salarioAtual">Salarial Atual</label>
+                <input class="input" type="number" id="salarioAtual" name="salarioAtual" placeholder="Salário em reais" required/>
             </div>
     
-            <label for="genero">Gênero:</label>
+            <label class="labelImportante" for="genero">Gênero:</label>
             
             <div class="masc">
-                <input type="radio" id="masc" name="genero" value="M"/>
+                <input type="radio" id="masc" name="genero" value="Masculino" required/>
                 <label for="masc">Masculino</label>
                 
             </div>
     
             <div class="fem">
-                <input type="radio" id="fem" name="genero" value="F"/>
+                <input type="radio" id="fem" name="genero" value="Feminino" required/>
                 <label for="fem">Feminino</label>
             </div>
     
             <div class="outros">
-                <input type="radio" id="outros" name="genero" value="O"/>
+                <input type="radio" id="outros" name="genero" value="Outro" required/>
                 <label for="outros">Outros</label>
             </div>
            
             <div class="cargo">
-                <label for="cargo">Cargo:</label>
+                <label class="labelImportante" for="cargo">Cargo:</label>
                 <select name="cargo" id="cargo">
                     <option selected disabled value="nada">Selecione seu cargo</option>
-                    <option value="administrador">Administrador</option>
-                    <option value="diretorRH">Diretor de RH</option>
-                    <option value="chefeMarketing">Chefe de Marketing</option>
-                    <option value="supervisorGeralAtendimentos">Super. Geral Atendimentos</option>
-                    <option value="diretorContabilidade">Diretor Contabilidade</option>
+                    <option value="Administrador">Administrador</option>
+                    <option value="Diretor de RH">Diretor de RH</option>
+                    <option value="Chefe de Marketing">Chefe de Marketing</option>
+                    <option value="Supervisor Geral de Atendimentos">Super. Geral Atendimentos</option>
+                    <option value="Diretor de Contabilidade">Diretor Contabilidade</option>
         
                 </select>
             </div>
