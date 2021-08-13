@@ -22,6 +22,11 @@
     {
         echo "<h1>As informações não foram enviadas corretamente</h1>";
         die;
+
+        /*
+        die("<h1>As informações não foram enviadas corretamente</h1>");
+        die é uma função, então podemos colocar argumentos dentro dele caso necessário
+        */
     }
 
 //CALCULANDO O VALOR DE REAJUSTE
@@ -29,6 +34,7 @@
     if ($salarioAtual >5000)
     {
         $salarioReajustado = $salarioAtual + (($salarioAtual/100) * 10);
+        
     }
 
     else
@@ -36,6 +42,10 @@
         $salarioReajustado = $salarioAtual + (($salarioAtual/100) * 20);
     }
 
+    /*
+        %$salarioReajustado = $salarioAtual > 5000 ? $salarioAtual * 1.1 : $salarioAtual * 1.2
+        expressão ternária. condição ? ação se true : ação se false
+    */
     ?><!-- 
 
 //MONTANDO HTML-->
@@ -59,14 +69,13 @@
     <body>
 
         <header>
-         <h1>Fulbank ;)</h1> 
+            <h1>Fulbank ;)</h1> 
         </header>
 
         <main class="mainResultado">
                 <h2>Fulbank - Reajuste Salarial</h2>
 
                 <div class="informacoes">
-                    
                     <p><em>Nome:</em> <?=$nome?>  </p>
                     <p><em>Salário atual:</em>  R$ <?=number_format($salarioAtual, 2, ",", ".")?>  </p>
                     <p><em>Gênero: </em><?=$genero?>  </p>
@@ -76,8 +85,15 @@
 
                 <div class="resposta">
                     <p>Olá, <?=$nome?>!!</p>
-                    <p>Você passará a receber <em>R$ <?= number_format($salarioReajustado, 2, ",", ".") ?></em> no cargo de <em><?=$cargo?></em> </p>
-
+                    <!--
+                        <//?= $genero === "Masculino" ? "O" : ($genero === "Feminino" ? "A" : "") ?>
+                        testando o genero para colocar o artigo mais adequado
+                        === testa valor e tipo
+                        expressão ternária aninhada. -> a primeira vai normal e a segunda entreparêntesis.
+                   -->
+                    <p>
+                        Você passará a receber <em>R$ <?= number_format($salarioReajustado, 2, ",", ".") ?></em> no cargo de <em><?=$cargo?></em> 
+                    </p>
                 </div>
                 
                 <button><a href="index.html">Calcular Novamente</a></button>

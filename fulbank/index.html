@@ -40,11 +40,19 @@
             </div>
     
             <label class="labelImportante" for="genero">Gênero:</label>
+
+            <!-- 
+                * Name -> agrupa radiosbuttons
+                For -> liga o label pelo id do input 
+
+                Tem que ter value, senão não funciona
+
+                div#meuID -> cria a tag já com o Id
+            -->
             
             <div class="masc">
                 <input type="radio" id="masc" name="genero" value="Masculino" required/>
                 <label for="masc">Masculino</label>
-                
             </div>
     
             <div class="fem">
@@ -57,10 +65,16 @@
                 <label for="outros">Outros</label>
             </div>
            
+
+            <!-- 
+                Se não tiver value, envia o text para o backend.
+                Para o banco de dados, o identificador é o ID
+            -->
             <div class="cargo">
                 <label class="labelImportante" for="cargo">Cargo:</label>
-                <select name="cargo" id="cargo">
+                <select name="cargo" id="cargo" required>
                     <option selected disabled value="nada">Selecione seu cargo</option>
+                        <!-- value =""  NÃO DEIXARIA O "SELECIONE" SER ENVIADO NA REQUISIÇÃO-->
                     <option value="Administrador">Administrador</option>
                     <option value="Diretor de RH">Diretor de RH</option>
                     <option value="Chefe de Marketing">Chefe de Marketing</option>
