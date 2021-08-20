@@ -1,0 +1,151 @@
+<?php
+    /* $cargos = array();
+        Maneira antiga de declarar um vetor
+    */
+
+    //está aqui em cima porque o HTML não ocnversa como banco e EM TEORIA  está vindo de lá
+
+//CRIANDO UM VETOR    
+    $cargos = 
+    [
+        "Administrador",
+        "Diretor de RH",
+        "Chefe de Marketing",
+        "Supervisor Geral de Atendimentos",
+    ];
+
+//ADICIONANDO UM ELEMENTO NO VETOR sem posição definida
+    $cargos[]="Diretor de contabilidade";
+    $cargos[]="Gerente de vendas";
+    $cargos[]="CEO";
+    $cargos[]="Gerente de TI";
+
+//ADICIONANDO UM ELEMENTO NO VETOR com posição definida
+    $cargos["cargão"]="Diretor de contabilidade";
+
+//APAGANDO UM ELEMENTO NO VETOR com posição definida
+    unset($cargos [6]);
+    //$cargos = []; limpa a lista de itens do vetores
+
+//IMPRIMINDO O VETOR    
+    /*print_r($cargos);
+    die;*/
+        
+        
+        
+?>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fulbank - Reajuste Salarial</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+    <header>
+       <h1>Fulbank ;)</h1> 
+    </header>
+
+    <main>
+        
+
+        <form method="POST" action="./calcularReajusteSalario.php">
+
+            <div class="titulo">
+                <h2>Reajuste Salarial</h2>
+            </div>
+
+            
+
+            <div class="nome">
+                <label class="labelImportante" for="nome">Nome</label>
+                <input class="input" id="nome" name="nome" placeholder="Digite aqui seu nome" required/>
+            </div>
+            
+            <div class="salario">
+                <label  class="labelImportante" for="salarioAtual">Salarial Atual</label>
+                <input class="input" type="number" id="salarioAtual" name="salarioAtual" placeholder="Salário em reais" required/>
+            </div>
+    
+            <label class="labelImportante" for="genero">Gênero:</label>
+
+            <!-- 
+                * Name -> agrupa radiosbuttons
+                For -> liga o label pelo id do input 
+
+                Tem que ter value, senão não funciona
+
+                div#meuID -> cria a tag já com o Id
+            -->
+            
+            <div class="masc">
+                <input type="radio" id="masc" name="genero" value="Masculino" required/>
+                <label for="masc">Masculino</label>
+            </div>
+    
+            <div class="fem">
+                <input type="radio" id="fem" name="genero" value="Feminino" required/>
+                <label for="fem">Feminino</label>
+            </div>
+    
+            <div class="outros">
+                <input type="radio" id="outros" name="genero" value="Outro" required/>
+                <label for="outros">Outros</label>
+            </div>
+           
+
+            <!-- 
+                Se não tiver value, envia o text para o backend.
+                Para o banco de dados, o identificador é o ID
+            -->
+            <div class="cargo">
+                <label class="labelImportante" for="cargo">Cargo:</label>
+                <select name="cargo" id="cargo" required>
+                    <option selected disabled value="nada">Selecione seu cargo</option>
+                        <!-- value =""  NÃO DEIXARIA O "SELECIONE" SER ENVIADO NA REQUISIÇÃO
+                    <option value="Administrador">Administrador</option>
+                    <option value="Diretor de RH">Diretor de RH</option>
+                    <option value="Chefe de Marketing">Chefe de Marketing</option>
+                    <option value="Supervisor Geral de Atendimentos">Super. Geral Atendimentos</option>
+                    <option value="Diretor de Contabilidade">Diretor Contabilidade</option> -->
+                    <?php
+                    //PERCORRENDO/ITERANDO UM VETOR COM FOREACH
+                        foreach($cargos as $cargo)
+                        {
+                            echo "<option> $cargo</option>";
+                            //imprimimos a VARIÁVEL cargo que recebeu info do VETOR cargos
+                        }
+
+                        /*$tam = count($cargos);
+                        $contador = 0;
+                        while ($contador < $tam)
+                        {
+                            echo "<option>" . $cargos[$contador] . "</option>";
+                            $contador ++;
+                        }*/
+                    ?>
+
+                </select>
+            </div>
+             
+    
+            <button>Calcular</button>
+        </form>
+    </main>
+
+    <footer>
+        <span> Copyright &copy; | Maria Luiza Ribeiro Teixeira  </span>
+    </footer>
+
+    
+</body>
+</html>
